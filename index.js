@@ -57,7 +57,7 @@ const ExtensionCommandType = {
   
       showLoadingIndicator(extensionService);
       //post message to parent window - hide continue button
-      window.top.postMessage("hide-checkout-shipping-continue", "https://sellars-absorbent-materials-sandbox-1.mybigcommerce.com");
+      window.top.postMessage("hide-checkout-shipping-continue", "https://sellarspro.com/");
   
   
       //perform price update operations
@@ -73,14 +73,14 @@ const ExtensionCommandType = {
       await sleep(1000);
       //post message to parent window - show continue button
       hideLoadingIndicator();
-      window.top.postMessage("show-checkout-shipping-continue", "https://sellars-absorbent-materials-sandbox-1.mybigcommerce.com");
+      window.top.postMessage("show-checkout-shipping-continue", "https://sellarspro.com/");
       //window.top.postMessage("checkout-shipping-next-step", "https://sellars-absorbent-materials-sandbox-1.mybigcommerce.com");
     }
   
     async function requestCartPriceUpdate(cartId) {
       //make fetch call to  http://localhost:7071/api/updateProductPrices with cartID as a post json
       //test with California and Florida
-      const cartUpdate = await fetch('http://localhost:7071/api/updateProductPrices', {
+      const cartUpdate = await fetch('https://sam-bc-test.azurewebsites.net/api/updateProductPrices', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
